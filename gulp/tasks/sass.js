@@ -1,6 +1,9 @@
 module.exports = () => {
     $.gulp.task('sass', () => {
-        return $.gulp.src('src/static/sass/style.scss')
+        return $.gulp.src([
+            'node_modules/bootstrap/scss/bootstrap.scss',
+            'src/static/sass/style.scss'
+        ])
             .pipe($.glp.sourcemaps.init())
             .pipe($.glp.sass({
                 'include css': true
