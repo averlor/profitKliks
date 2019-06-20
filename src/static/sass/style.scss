@@ -1,0 +1,85 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy&display=swap');
+
+// reset style
+@import 'reset';
+
+// variables
+$body-background: linear-gradient(to top, #55EFCB 0%, #5BCAFF 100%);
+$h1-font-family: 'Indie Flower';
+
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+body{
+    background: $body-background;
+    height: 100vh;
+}
+.link{
+    width: 40vw;
+    padding-top: 20vh;
+    margin: 0 auto;
+
+    .links__a{
+        text-decoration: none;
+        outline: none;
+        display: inline-block;
+        padding: 20px 30px;
+        margin: 10px 10px;
+        position: relative;
+        color: white;
+        border: 1px solid rgba(255,255,255,.4);
+        background: none;
+        font-weight: 300;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .links__a:before,
+    .links__a:after{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        box-sizing: border-box;
+    }
+
+    .links__a:before{
+        bottom: 0;
+        left: 0;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+        transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+    }
+    .links__a:after{
+        top: 0;
+        right: 0;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+        transition: 0s ease opacity .4s, .2s ease width , .2s ease height .2s;
+    }
+
+    .links__a:hover:before,
+    .links__a:hover:after{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    }
+
+    .links__a:hover:before{
+        transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+    }
+    .links__a:hover:after{
+        transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;
+    }
+    .links__a:hover{
+        background: rgba(255,255,255,.2);
+    }
+
+}
